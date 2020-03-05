@@ -7,8 +7,8 @@ public class heapsort
   
         // Build heap (rearrange array) 
         for (int i = n / 2 - 1; i >= 0; i--) {
+        	System.out.println("\t\tFestlegen der Root: "+n);
             heapify(arr, n, i); 
-//            System.out.println(n+" ist die Root ganz oben");
         }
         // One by one extract an element from heap 
         for (int i=n-1; i>=0; i--) 
@@ -18,7 +18,7 @@ public class heapsort
             arr[0] = arr[i]; 
             arr[i] = temp; 
         	printArray(arr);
-//        	System.out.println("Die Zahlenkleiner als "+n+" werden herausgeschrieben also jetzt:	"+i);
+        	System.out.println("Die Zahlenkleiner als "+n+" werden herausgeschrieben also jetzt:	"+i);
   
             // call max heapify on the reduced heap 
             heapify(arr, i, 0); 
@@ -36,7 +36,7 @@ public class heapsort
         // If left child is larger than root 
         if (l < n && arr[l] > arr[largest]) {
             largest = l; 
-            System.out.println("linker zweig: "+largest);
+            System.out.println("linker zweig: "+arr[l]);
         }
   
         // If right child is larger than largest so far 
@@ -71,11 +71,12 @@ public class heapsort
     // Driver program 
     public static void main(String args[]) 
     { 
-        int arr[] = {12, 11, 13, 5, 6, 7}; 
+        System.out.println("Main");
+    	int arr[] = {12, 11, 13, 5, 6, 7}; 
         System.out.println("Zu sortierender Array:");
         printArray(arr);
         int n = arr.length; 
-  
+        System.out.println("\tHeapsort aufrufen");
         heapsort ob = new heapsort(); 
         ob.sort(arr); 
   
